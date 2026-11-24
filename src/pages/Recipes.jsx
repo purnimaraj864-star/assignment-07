@@ -2,15 +2,16 @@ import React, { useState } from 'react'
 import RecipeCard from '../components/RecipeCard'
 
 function Recipes({ recipes, toggleFav }) {
-  const [q, setQ] = useState("");
+  // const [q, setQ] = useState("");
   const [t, setT] = useState("All");
   const [s, setS] = useState("None");
 
+  
   let list = recipes.filter((r) => {
-    const mq = r.name.toLowerCase().includes(q.toLowerCase());
     const mt = t === "All" || r.type === t;
-    return mq && mt;
+    return mt;
   });
+
 
   if (s === "lowToHigh") {
     list = [...list].sort((a, b) => a.cookingTime - b.cookingTime);
@@ -22,9 +23,7 @@ function Recipes({ recipes, toggleFav }) {
     <div>
       <h2>All Recipes</h2>
       <div>
-        <input
-          type="text" placeholder="Search recipes..." value={q} onChange={(e) => setQ(e.target.value)}
-        />{" "}
+       
         <select value={t} onChange={(e) => setT(e.target.value)}>
           <option value="All">All</option>
              <option value="Veg">Veg</option>

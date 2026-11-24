@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { useParams, Link } from 'react-router'
+import { useParams, Link } from 'react-router-dom'
 
 function RecipeDetails({recipes,toggleFav}) {
  const { id } = useParams()

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BrowserRouter, Routes, Route } from "react-router"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import recipesData from './data/recipes'
 import Navbar from './components/Navbar'
